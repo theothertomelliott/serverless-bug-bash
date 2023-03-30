@@ -28,6 +28,9 @@ export const main = async (argumentJson) => {
             redirect: 'follow',
             body: JSON.stringify(data),
         });
+        if (!response.ok || response.status !== 200) {
+            console.log(response);
+        }
         return {
             "body": `      
             <!DOCTYPE html>
