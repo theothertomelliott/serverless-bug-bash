@@ -5,14 +5,13 @@ export const main = async (argumentJson) => {
     url = url.substring(questionMark);
     let urlParams = new URLSearchParams(url);
     let name = urlParams.get("name");
-    let key = "a21320fcc902e963317958ff4f9ca77b";
     let botScore = 0;
     if(argumentJson["headers"]["X-Bot-Score"]) {
         botScore = argumentJson["headers"]["X-Bot-Score"];
     }
  
     if(botScore >= 30) {
-        const postUrl = 'https://api.yext.com/v2/accounts/me/entities?api_key=' + key + '&entityType=ce_sports' + '&v=20220808';
+        const postUrl = `https://api.yext.com/v2/accounts/me/entities?api_key=' + ${globals.API_KEY} + '&entityType=ce_sports' + '&v=2022080811`;
         let data = {
             "name": name, 
  
