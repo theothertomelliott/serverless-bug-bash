@@ -11,7 +11,7 @@ export const main = async (argumentJson) => {
     }
  
     if(botScore >= 30) {
-        const postUrl = `https://sandbox.yext.com/v2/accounts/me/entities?api_key=${API_KEY}&entityType=ce_sport&v=2022080811`;
+        const postUrl = `https://sandbox.yext.com/v2/accounts/me/entities?api_key=${API_KEY}&entityType=ce_sport&v=20220811`;
         let data = {
             "name": name, 
  
