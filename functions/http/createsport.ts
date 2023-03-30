@@ -27,7 +27,7 @@ export const main = async (argumentJson) => {
             redirect: 'follow',
             body: JSON.stringify(data),
         });
-        if (!response.ok || response.status !== 200) {
+        if (!response.ok || response.status !== 201) {
             console.log(response);
         }
         return {
