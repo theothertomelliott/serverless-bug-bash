@@ -1,0 +1,5 @@
+{
+  "functions/http/createsport.ts": {
+    "entrypoint": "main"
+  }
+}
