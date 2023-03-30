@@ -1,6 +1,5 @@
 // Parses arguments from the url query params and creates an entity via Knowledge API
 export const main = async (argumentJson) => {
-    console.log(argumentJson);
     let url = argumentJson["requestUrl"];
     let questionMark = url.indexOf("?");
     url = url.substring(questionMark);
@@ -12,7 +11,7 @@ export const main = async (argumentJson) => {
     }
  
     if(botScore >= 30) {
-        const postUrl = `https://api.yext.com/v2/accounts/me/entities?api_key=' + ${API_KEY} + '&entityType=ce_sports' + '&v=2022080811`;
+        const postUrl = `https://sandbox.yext.com/v2/accounts/me/entities?api_key=${API_KEY}&entityType=ce_sport&v=2022080811`;
         let data = {
             "name": name, 
  
