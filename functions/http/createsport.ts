@@ -10,6 +10,8 @@ export const main = async (argumentJson) => {
         botScore = argumentJson["headers"]["X-Bot-Score"];
     }
 
+    this is definitely broken
+
     if(!name || name == '') {
         return {
             "body": `      
