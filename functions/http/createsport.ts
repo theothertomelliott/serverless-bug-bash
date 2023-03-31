@@ -9,6 +9,31 @@ export const main = async (argumentJson) => {
     if(argumentJson["headers"]["X-Bot-Score"]) {
         botScore = argumentJson["headers"]["X-Bot-Score"];
     }
+
+    if(!name || name == '') {
+        return {
+            "body": `      
+            <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                </head>
+                <body>
+                    <div style=" margin-top: 10%; margin-left: 30%; text-align: center;">
+                        <body>
+                            <h1>No name</h1>
+                            <p>You need to provide a name for your sport</p>
+                        </body>
+                    </div>
+                </body>
+                </html>
+            `,
+            "statusCode": 200,
+            "headers": {
+                "Cache-control": "no-store",
+                "X-Yext-Test": "Example header",
+            },
+          };
+    }
  
     if(botScore >= 30) {
         const postUrl = `https://sandbox.yext.com/v2/accounts/me/entities?api_key=${API_KEY}&entityType=ce_sport&v=20220811`;
